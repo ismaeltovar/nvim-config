@@ -1,0 +1,2 @@
+choco install fd ripgrep
+
