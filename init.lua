@@ -23,7 +23,7 @@ require("lazy").setup({
 	{
 		'nvim-telescope/telescope.nvim', 
 		branch = '0.1.x', 
-		dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep', 'sharkdp/fd' },
+		dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep', 'sharkdp/fd', "nvim-tree/nvim-web-devicons" },
 	},
 	{ 
 		'nvim-telescope/telescope-fzf-native.nvim', 
@@ -31,6 +31,13 @@ require("lazy").setup({
 	},
 	"rebelot/kanagawa.nvim",
 })
+
+-- Dev icons 
+require'nvim-web-devicons'.setup {
+ color_icons = true;
+ default = true;
+ strict = true;
+}
 
 --kanagawa color scheme
 --vim.cmd("colorscheme kanagawa-wave")
@@ -41,6 +48,7 @@ local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
+vim.keymap.set('n', '<leader>fs', builtin.grep_string, {})
 vim.keymap.set('n', '<leader>flg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
