@@ -1,10 +1,12 @@
 vim.g.mapleader = " "
+
+--file explorer
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
---[[
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-]]--
+--tabs
+vim.keymap.set("n", "<leader>tn", vim.cmd.tabnew)
+vim.keymap.set("n", "<leader>tr", vim.cmd.tabn)
+vim.keymap.set("n", "<leader>tl", vim.cmd.tabp)
+vim.keymap.set("n", "<leader>tcc", vim.cmd.tabclose)
+vim.keymap.set("n", "<leader>tco", vim.cmd.tabonly)
+
